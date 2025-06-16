@@ -1,49 +1,42 @@
 <nav class="navbar">
-  <h1>Homeoffice-Stempeluhr</h1>
-</nav>
-
-<div class="dashboard-card">
-  <div class="buttons-container">
-    <button
-      class="btn-checkin"
-      (click)="checkIn()"
-      [style.backgroundColor]="activeButton === 'checkin' ? '#4caf50' : null"
-    >
-      Einstempeln
-    </button>
-
-    <div class="divider"></div>
-
-    <button
-      class="btn-checkout"
-      (click)="checkOut()"
-      [style.backgroundColor]="activeButton === 'checkout' ? '#f44336' : null"
-    >
-      Ausstempeln
-    </button>
-  </div>
-
-  <div class="overview-button">
-    <button class="btn-overview" (click)="toggleOverview()">Übersicht</button>
-  </div>
-</div>
-
-<!-- Übersicht Card -->
-<div class="overview-card" *ngIf="showOverview">
-  <button class="btn-close" (click)="toggleOverview()">Schließen ✖️</button>
-
-  <mat-form-field>
-    <mat-label>Choose a date</mat-label>
-    <input matInput [matDatepicker]="picker">
-    <mat-hint>MM/DD/YYYY</mat-hint>
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
+    <h1>Homeoffice-Stempeluhr</h1>
+  </nav>
   
-  <div class="times-list" *ngIf="selectedDate">
-    <h3>Stempelzeiten für {{ selectedDate | date: 'dd.MM.yyyy' }}</h3>
-    <ul>
-      <li *ngFor="let time of timesForDate">{{ time }}</li>
-    </ul>
+  <div class="dashboard-card">
+    <div class="buttons-container">
+      <button
+        class="btn-checkin"
+        (click)="checkIn()"
+        [style.backgroundColor]="activeButton === 'checkin' ? '#4caf50' : null"
+      >
+        Einstempeln
+      </button>
+  
+      <div class="divider"></div>
+  
+      <button
+        class="btn-checkout"
+        (click)="checkOut()"
+        [style.backgroundColor]="activeButton === 'checkout' ? '#f44336' : null"
+      >
+        Ausstempeln
+      </button>
+    </div>
+  
+    <div class="overview-button">
+      <button class="btn-overview" (click)="toggleOverview()">Übersicht</button>
+    </div>
   </div>
-</div>
+  
+  <!-- Übersicht Card -->
+  <div class="overview-card" *ngIf="showOverview">
+    <button class="btn-close" (click)="toggleOverview()">Schließen ✖️</button>
+  
+    <div class="times-list">
+      <h3>Stempelzeiten</h3>
+      <ul>
+        <li *ngFor="let time of timesForDate">{{ time }}</li>
+      </ul>
+    </div>
+  </div>
+  
