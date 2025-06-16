@@ -1,0 +1,75 @@
+.navbar {
+    background-color: #004aad;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  .dashboard-card {
+    max-width: 600px;
+    margin: 3rem auto;
+    background: #f0f4ff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 1rem 2.5rem;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-checkin {
+    background-color: #1e88e5;
+  }
+  
+  .btn-checkin:hover {
+    background-color: #1565c0;
+  }
+  
+  .btn-checkout {
+    background-color: #0d47a1;
+  }
+  
+  .btn-checkout:hover {
+    background-color: #08306b;
+  }
+  
+  .divider {
+    width: 3px;
+    height: 50px;
+    background-color: #004aad;
+    border-radius: 2px;
+  }
+  
+  .overview-button {
+    text-align: center;
+  }
+  
+  .btn-overview {
+    background-color: #1976d2;
+    padding: 0.75rem 3rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  .btn-overview:hover {
+    background-color: #0d47a1;
+  }
+  

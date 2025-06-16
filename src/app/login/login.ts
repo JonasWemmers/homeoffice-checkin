@@ -25,7 +25,7 @@ export class LoginComponent {
     try {
       await signInWithEmailAndPassword(this.auth, this.email, this.password);
       this.errorMessage = '';
-      alert('✅ Es hat funktioniert!');
+      this.router.navigate(['/dashboard']); 
     } catch (error: any) {
       this.errorMessage = this.mapError(error.code);
     }
