@@ -40,3 +40,6 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Firebase environment files - keep them out of Git
+/src/environments/environment.ts
