@@ -1,18 +1,29 @@
 <nav class="navbar">
-    <h1>Homeoffice-Stempeluhr</h1>
-  </nav>
-  
-  <div class="dashboard-card">
-    <div class="buttons-container">
-      <button class="btn-checkin" (click)="checkIn()">Einstempeln</button>
-      
-      <div class="divider"></div>
-      
-      <button class="btn-checkout" (click)="checkOut()">Ausstempeln</button>
-    </div>
-  
-    <div class="overview-button">
-      <button class="btn-overview">Übersicht</button>
-    </div>
+  <h1>Homeoffice-Stempeluhr</h1>
+</nav>
+
+<div class="dashboard-card">
+  <div class="buttons-container">
+    <button
+      class="btn-checkin"
+      (click)="checkIn()"
+      [style.backgroundColor]="activeButton === 'checkin' ? '#4caf50' : null"
+    >
+      Einstempeln
+    </button>
+
+    <div class="divider"></div>
+
+    <button
+      class="btn-checkout"
+      (click)="checkOut()"
+      [style.backgroundColor]="activeButton === 'checkout' ? '#f44336' : null"
+    >
+      Ausstempeln
+    </button>
   </div>
-  
+
+  <div class="overview-button">
+    <button class="btn-overview">Übersicht</button>
+  </div>
+</div>
