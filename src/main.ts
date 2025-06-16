@@ -17,7 +17,6 @@ bootstrapApplication(App, {
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
     provideAnimations(),
-    AuthService,                     // AuthService global injizieren
     ...(appConfig.providers || []),
   ],
 }).catch((err: unknown) => console.error(err));
