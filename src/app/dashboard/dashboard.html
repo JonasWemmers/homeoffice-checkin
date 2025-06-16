@@ -24,6 +24,26 @@
   </div>
 
   <div class="overview-button">
-    <button class="btn-overview">Übersicht</button>
+    <button class="btn-overview" (click)="toggleOverview()">Übersicht</button>
+  </div>
+</div>
+
+<!-- Übersicht Card -->
+<div class="overview-card" *ngIf="showOverview">
+  <button class="btn-close" (click)="toggleOverview()">Schließen ✖️</button>
+
+  <mat-form-field>
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  
+  <div class="times-list" *ngIf="selectedDate">
+    <h3>Stempelzeiten für {{ selectedDate | date: 'dd.MM.yyyy' }}</h3>
+    <ul>
+      <li *ngFor="let time of timesForDate">{{ time }}</li>
+    </ul>
   </div>
 </div>

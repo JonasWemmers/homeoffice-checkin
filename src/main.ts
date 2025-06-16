@@ -6,13 +6,18 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 
 import { environment } from './environments/environment';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
-// 👉 Firebase Setup in AppConfig integrieren
+// AuthService importieren
+import { AuthService } from './app/services/auth';
+
 bootstrapApplication(App, {
   ...appConfig,
   providers: [
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
-    ...(appConfig.providers || [])
-  ]
+    provideAnimations(),
+    AuthService,                     // AuthService global injizieren
+    ...(appConfig.providers || []),
+  ],
 }).catch((err: unknown) => console.error(err));
